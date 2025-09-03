@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Report Found Item</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="found">
+  <header class="navbar">
+    <a class="brand" href="index.html">🎒 Lost & Found</a>
+    <nav>
+      <a href="lost.html">Report Lost</a>
+      <a href="found.html" class="active">Report Found</a>
+      <a href="list.html">Browse Items</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Report a Found Item</h1>
+    <form id="itemForm" class="form-card" autocomplete="on">
+      <input type="hidden" name="type" value="found" />
+
+      <div class="form-row">
+        <label>Item name <span>*</span>
+          <input name="name" type="text" required placeholder="e.g., iPhone 13" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Category <span>*</span>
+          <select name="category" required>
+            <option value="">Choose…</option>
+            <option>Electronics</option>
+            <option>Clothing</option>
+            <option>Accessories</option>
+            <option>Books & Papers</option>
+            <option>Keys & Cards</option>
+            <option>Sports & Outdoors</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Description
+          <textarea name="description" rows="3" placeholder="Condition, identifiers, etc."></textarea>
+        </label>
+      </div>
+
+      <div class="form-row grid-2">
+        <label>Where is it now? <span>*</span>
+          <input name="location" type="text" required placeholder="e.g., Security desk" />
+        </label>
+        <label>Date found <span>*</span>
+          <input name="date" type="date" required />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Contact details <span>*</span>
+          <input name="contact" type="text" required placeholder="Email or phone" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Photo (optional)
+          <input name="image" type="file" accept="image/*" />
+        </label>
+        <div class="img-preview" id="imgPreview" aria-hidden="true"></div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Submit Found Report</button>
+        <a class="btn" href="list.html">View All</a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer">Thank you for helping your community!</footer>
+  <script src="script.js"></script>
+</body>
+</html>

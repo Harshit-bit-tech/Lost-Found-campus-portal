@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lost & Found Items</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="list">
+  <header class="navbar">
+    <a class="brand" href="index.html">🎒 Lost & Found</a>
+    <nav>
+      <a href="lost.html">Report Lost</a>
+      <a href="found.html">Report Found</a>
+      <a href="list.html" class="active">Browse Items</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Browse Lost & Found</h1>
+
+    <section class="filters">
+      <div class="filter-row">
+        <input id="searchInput" type="search" placeholder="Search by name, description, location…" />
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+          <option>Electronics</option>
+          <option>Clothing</option>
+          <option>Accessories</option>
+          <option>Books & Papers</option>
+          <option>Keys & Cards</option>
+          <option>Sports & Outdoors</option>
+          <option>Other</option>
+        </select>
+        <select id="typeFilter">
+          <option value="">Lost & Found</option>
+          <option value="lost">Lost only</option>
+          <option value="found">Found only</option>
+        </select>
+        <select id="sortBy">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="itemsGrid" class="grid"></section>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="badge"></div>
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="card-body">
+          <h3 class="item-name"></h3>
+          <p class="item-desc"></p>
+          <ul class="meta">
+            <li><strong>Category:</strong> <span class="item-category"></span></li>
+            <li><strong>Location:</strong> <span class="item-location"></span></li>
+            <li><strong>Date:</strong> <span class="item-date"></span></li>
+            <li><strong>Contact:</strong> <span class="item-contact"></span></li>
+          </ul>
+          <div class="card-actions">
+            <button class="btn small outline mark-resolved">Mark Resolved</button>
+            <button class="btn small danger delete-item">Delete</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <p id="emptyState" class="empty-state" hidden>No items yet. Be the first to <a href="lost.html">report a lost item</a> or <a href="found.html">report a found item</a>.</p>
+  </main>
+
+  <footer class="footer">Tip: Use the search bar and filters to narrow results.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

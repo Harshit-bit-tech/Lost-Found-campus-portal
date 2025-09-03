@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Report Lost Item</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="lost">
+  <header class="navbar">
+    <a class="brand" href="index.html">🎒 Lost & Found</a>
+    <nav>
+      <a href="lost.html" class="active">Report Lost</a>
+      <a href="found.html">Report Found</a>
+      <a href="list.html">Browse Items</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Report a Lost Item</h1>
+    <form id="itemForm" class="form-card" autocomplete="on">
+      <input type="hidden" name="type" value="lost" />
+
+      <div class="form-row">
+        <label>Item name <span>*</span>
+          <input name="name" type="text" required placeholder="e.g., Black Backpack" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Category <span>*</span>
+          <select name="category" required>
+            <option value="">Choose…</option>
+            <option>Electronics</option>
+            <option>Clothing</option>
+            <option>Accessories</option>
+            <option>Books & Papers</option>
+            <option>Keys & Cards</option>
+            <option>Sports & Outdoors</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Description
+          <textarea name="description" rows="3" placeholder="Brand, color, identifiers…"></textarea>
+        </label>
+      </div>
+
+      <div class="form-row grid-2">
+        <label>Last seen location <span>*</span>
+          <input name="location" type="text" required placeholder="e.g., Library 2nd floor" />
+        </label>
+        <label>Date <span>*</span>
+          <input name="date" type="date" required />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Contact details <span>*</span>
+          <input name="contact" type="text" required placeholder="Email or phone" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Photo (optional)
+          <input name="image" type="file" accept="image/*" />
+        </label>
+        <div class="img-preview" id="imgPreview" aria-hidden="true"></div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Submit Lost Report</button>
+        <a class="btn" href="list.html">View All</a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer">Data is stored locally in your browser.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
